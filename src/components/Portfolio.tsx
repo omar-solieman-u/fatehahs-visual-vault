@@ -79,17 +79,17 @@ const Portfolio = () => {
       {/* Enhanced Background Parallax Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-32 left-16 w-48 h-48 bg-gradient-to-r from-rose-200 to-pink-300 rounded-full opacity-30 animate-pulse"></div>
-        <div className="absolute bottom-32 right-16 w-40 h-40 bg-gradient-to-r from-lavender-200 to-purple-300 rounded-full opacity-30 animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/3 w-32 h-32 bg-gradient-to-r from-peach-200 to-coral-300 rounded-full opacity-30 animate-pulse delay-500"></div>
-        <div className="absolute top-1/4 right-1/3 w-36 h-36 bg-gradient-to-r from-sky-200 to-blue-300 rounded-full opacity-25 animate-pulse delay-700"></div>
+        <div className="absolute bottom-32 right-16 w-40 h-40 bg-gradient-to-r from-purple-200 to-pink-300 rounded-full opacity-30 animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/3 w-32 h-32 bg-gradient-to-r from-amber-200 to-orange-300 rounded-full opacity-30 animate-pulse delay-500"></div>
+        <div className="absolute top-1/4 right-1/3 w-36 h-36 bg-gradient-to-r from-teal-200 to-emerald-300 rounded-full opacity-25 animate-pulse delay-700"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="text-center mb-20">
-          <h2 className="text-6xl font-bold text-slate-800 mb-8 font-serif leading-tight">
-            My <span className="bg-gradient-to-r from-rose-400 via-pink-400 to-peach-400 bg-clip-text text-transparent italic">Creative Journey</span>
+          <h2 className="text-6xl font-bold text-slate-800 mb-8 leading-tight">
+            My <span className="bg-gradient-to-r from-rose-400 via-pink-400 to-orange-400 bg-clip-text text-transparent italic">Creative Journey</span>
           </h2>
-          <p className="text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed font-light">
+          <p className="text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
             Each project tells a unique story, woven with creativity, passion, and purpose. Explore the narratives that have touched hearts and transformed brands.
           </p>
         </div>
@@ -111,39 +111,29 @@ const Portfolio = () => {
           ))}
         </div>
 
-        {/* Enhanced Project Grid with iPhone Mockups as Cards */}
+        {/* Enhanced Project Grid with iPhone Mockups */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {filteredProjects.map((project, index) => (
             <div
               key={project.id}
-              className="group relative animate-fade-in"
+              className="animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="relative transition-all duration-500 hover:scale-110 hover:-translate-y-4">
-                {/* iPhone as the main card */}
-                <div className="relative">
-                  <IPhoneMockup videoPlaceholder={project.videoPlaceholder} />
-                  
-                  {/* Hover overlay with project info */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-3xl flex flex-col justify-end p-6">
-                    <div className="text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                      <span className="inline-block bg-gradient-to-r from-rose-400 to-pink-500 text-white text-xs px-3 py-1 rounded-full mb-2 font-medium">
-                        {project.category}
-                      </span>
-                      <h3 className="text-lg font-bold font-serif mb-1">{project.title}</h3>
-                      <p className="text-xs opacity-80 italic mb-1">{project.client}</p>
-                      <p className="text-xs opacity-90 mb-2">{project.details}</p>
-                      <div className="flex justify-between items-center text-xs">
-                        <span className="opacity-80">Views</span>
-                        <span className="text-pink-300 font-bold">{project.views}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className="text-center">
+                <IPhoneMockup 
+                  videoPlaceholder={project.videoPlaceholder}
+                  project={{
+                    title: project.title,
+                    category: project.category,
+                    client: project.client,
+                    views: project.views,
+                    details: project.details
+                  }}
+                />
                 
                 {/* Project title below iPhone */}
-                <div className="text-center mt-6">
-                  <h3 className="text-xl font-bold text-slate-800 font-serif">{project.title}</h3>
+                <div className="mt-6">
+                  <h3 className="text-xl font-bold text-slate-800">{project.title}</h3>
                   <p className="text-slate-500 italic">{project.client}</p>
                 </div>
               </div>
@@ -152,7 +142,7 @@ const Portfolio = () => {
         </div>
 
         <div className="text-center mt-16">
-          <button className="bg-gradient-to-r from-rose-400 via-pink-400 to-peach-400 text-white px-12 py-5 rounded-full font-medium text-xl hover:scale-105 transition-transform duration-300 shadow-xl font-serif">
+          <button className="bg-gradient-to-r from-rose-400 via-pink-400 to-orange-400 text-white px-12 py-5 rounded-full font-medium text-xl hover:scale-105 transition-transform duration-300 shadow-xl">
             Discover More Stories
           </button>
         </div>

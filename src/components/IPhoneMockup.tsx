@@ -1,49 +1,64 @@
 
 interface IPhoneMockupProps {
   videoPlaceholder: string;
+  project?: {
+    title: string;
+    category: string;
+    client: string;
+    views: string;
+    details: string;
+  };
 }
 
-const IPhoneMockup = ({ videoPlaceholder }: IPhoneMockupProps) => {
+const IPhoneMockup = ({ videoPlaceholder, project }: IPhoneMockupProps) => {
   return (
-    <div className="relative w-44 h-88 mx-auto transform transition-all duration-500 hover:scale-105">
-      {/* Premium iPhone Frame - More accurate proportions */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-800 via-slate-700 to-slate-900 rounded-[2.75rem] p-1 shadow-2xl">
-        {/* Inner bezel */}
-        <div className="w-full h-full bg-black rounded-[2.5rem] p-1">
-          {/* Screen */}
-          <div className="w-full h-full bg-black rounded-[2.25rem] overflow-hidden relative">
-            {/* Dynamic Island (more accurate) */}
-            <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-20 h-6 bg-black rounded-full z-20 shadow-inner"></div>
-            
-            {/* Screen Content with Enhanced Gradient */}
-            <div className="w-full h-full bg-gradient-to-br from-rose-100 via-pink-100 to-orange-100 flex items-center justify-center text-slate-700 text-lg font-medium p-4">
-              <div className="text-center">
-                <div className="text-2xl mb-2">{videoPlaceholder.split(' ')[0]}</div>
-                <div className="text-xs opacity-70">{videoPlaceholder.split(' ').slice(1).join(' ')}</div>
-              </div>
+    <div className="group relative mx-auto transform transition-all duration-500 hover:scale-105">
+      {/* iPhone Frame using provided structure */}
+      <div className="relative mx-auto border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px] shadow-xl">
+        {/* Dynamic Island */}
+        <div className="w-[148px] h-[18px] bg-gray-800 top-0 rounded-b-[1rem] left-1/2 -translate-x-1/2 absolute"></div>
+        
+        {/* Side buttons */}
+        <div className="h-[46px] w-[3px] bg-gray-800 absolute -start-[17px] top-[124px] rounded-s-lg"></div>
+        <div className="h-[46px] w-[3px] bg-gray-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
+        <div className="h-[64px] w-[3px] bg-gray-800 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
+        
+        {/* Screen */}
+        <div className="rounded-[2rem] overflow-hidden w-[272px] h-[572px] bg-gradient-to-br from-rose-100 via-pink-100 to-orange-100 relative">
+          {/* Screen Content */}
+          <div className="w-full h-full flex items-center justify-center text-slate-700 text-lg font-medium p-6">
+            <div className="text-center">
+              <div className="text-3xl mb-3">{videoPlaceholder.split(' ')[0]}</div>
+              <div className="text-sm opacity-70">{videoPlaceholder.split(' ').slice(1).join(' ')}</div>
             </div>
-            
-            {/* Premium Play Button Overlay */}
-            <div className="absolute inset-0 flex items-center justify-center bg-black/15">
-              <div className="w-14 h-14 bg-white/95 rounded-full flex items-center justify-center shadow-2xl backdrop-blur-sm transition-all duration-300 hover:scale-110 border border-white/20">
-                <div className="w-0 h-0 border-l-[14px] border-l-slate-700 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent ml-1"></div>
-              </div>
-            </div>
-            
-            {/* Screen reflection effect */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent rounded-[2.25rem] pointer-events-none"></div>
           </div>
+          
+          {/* Play Button Overlay */}
+          <div className="absolute inset-0 flex items-center justify-center bg-black/10">
+            <div className="w-16 h-16 bg-white/95 rounded-full flex items-center justify-center shadow-xl backdrop-blur-sm transition-all duration-300 group-hover:scale-110">
+              <div className="w-0 h-0 border-l-[16px] border-l-slate-700 border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent ml-1"></div>
+            </div>
+          </div>
+          
+          {/* Hover overlay with project info */}
+          {project && (
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-[2rem] flex flex-col justify-end p-6">
+              <div className="text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <span className="inline-block bg-gradient-to-r from-rose-400 to-pink-500 text-white text-xs px-3 py-1 rounded-full mb-2 font-medium">
+                  {project.category}
+                </span>
+                <h3 className="text-lg font-bold mb-1">{project.title}</h3>
+                <p className="text-xs opacity-80 italic mb-1">{project.client}</p>
+                <p className="text-xs opacity-90 mb-2">{project.details}</p>
+                <div className="flex justify-between items-center text-xs">
+                  <span className="opacity-80">Views</span>
+                  <span className="text-pink-300 font-bold">{project.views}</span>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
-      
-      {/* Premium Home Indicator */}
-      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-white/30 rounded-full"></div>
-      
-      {/* Side buttons */}
-      <div className="absolute left-0 top-16 w-1 h-6 bg-slate-600 rounded-l-sm"></div>
-      <div className="absolute left-0 top-24 w-1 h-8 bg-slate-600 rounded-l-sm"></div>
-      <div className="absolute left-0 top-34 w-1 h-8 bg-slate-600 rounded-l-sm"></div>
-      <div className="absolute right-0 top-20 w-1 h-12 bg-slate-600 rounded-r-sm"></div>
     </div>
   );
 };
