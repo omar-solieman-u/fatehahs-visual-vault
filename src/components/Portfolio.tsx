@@ -5,62 +5,62 @@ import IPhoneMockup from "./IPhoneMockup";
 const Portfolio = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const categories = ["All", "Social Media", "Brand Campaigns", "Product Launches", "Personal Content"];
+  const categories = ["All", "Social Stories", "Brand Narratives", "Product Showcases", "Personal Moments"];
 
   const projects = [
     {
       id: 1,
-      title: "Viral TikTok Campaign",
-      category: "Social Media",
-      client: "Fashion Brand X",
+      title: "Dreamy Fashion Story",
+      category: "Social Stories",
+      client: "Ethereal Boutique",
       views: "2.3M",
-      videoPlaceholder: "🎬 Fashion Content",
-      description: "Created a viral dance challenge that increased brand awareness by 300%"
+      videoPlaceholder: "🌸 Fashion Magic",
+      description: "A whimsical journey through seasonal fashion that captured hearts worldwide"
     },
     {
       id: 2,
-      title: "Product Launch Strategy",
-      category: "Product Launches",
-      client: "Tech Startup Y",
+      title: "Artisan Product Launch",
+      category: "Product Showcases",
+      client: "Craft & Co.",
       views: "500K",
-      videoPlaceholder: "📱 Product Demo",
-      description: "Comprehensive launch campaign across multiple platforms"
+      videoPlaceholder: "🎨 Handmade Beauty",
+      description: "Showcasing the soul behind handcrafted products with intimate storytelling"
     },
     {
       id: 3,
-      title: "Brand Storytelling Series",
-      category: "Brand Campaigns",
-      client: "Lifestyle Brand Z",
+      title: "Heritage Brand Story",
+      category: "Brand Narratives",
+      client: "Legacy & Co.",
       views: "1.2M",
-      videoPlaceholder: "🌟 Brand Story",
-      description: "6-part series showcasing brand values and customer stories"
+      videoPlaceholder: "📖 Timeless Tales",
+      description: "A poetic series celebrating tradition and innovation in perfect harmony"
     },
     {
       id: 4,
-      title: "Behind the Scenes",
-      category: "Personal Content",
+      title: "Creative Process",
+      category: "Personal Moments",
       client: "Personal",
       views: "750K",
-      videoPlaceholder: "🎭 BTS Content",
-      description: "Raw, authentic content showing the creative process"
+      videoPlaceholder: "✨ Behind Magic",
+      description: "Raw, beautiful glimpses into the creative process and inspiration"
     },
     {
       id: 5,
-      title: "Influencer Collaboration",
-      category: "Social Media",
-      client: "Beauty Brand A",
+      title: "Wellness Journey",
+      category: "Social Stories",
+      client: "Bloom Wellness",
       views: "1.8M",
-      videoPlaceholder: "💄 Beauty Collab",
-      description: "Strategic partnership content with macro-influencers"
+      videoPlaceholder: "🌿 Mindful Living",
+      description: "Inspiring content about self-care and mindful living practices"
     },
     {
       id: 6,
-      title: "Event Coverage",
-      category: "Brand Campaigns",
-      client: "Corporate Event B",
+      title: "Cultural Celebration",
+      category: "Brand Narratives",
+      client: "Heritage Events",
       views: "400K",
-      videoPlaceholder: "🎪 Event Highlights",
-      description: "Live event coverage and post-event content strategy"
+      videoPlaceholder: "🎭 Cultural Pride",
+      description: "Celebrating diversity and cultural richness through visual storytelling"
     }
   ];
 
@@ -72,11 +72,11 @@ const Portfolio = () => {
     <section id="portfolio" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-white mb-6">
-            My <span className="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">Portfolio</span>
+          <h2 className="text-5xl font-bold text-slate-800 mb-6 font-serif">
+            My <span className="bg-gradient-to-r from-sky-400 to-teal-400 bg-clip-text text-transparent italic">Creative Journey</span>
           </h2>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto">
-            Explore my latest projects across different categories. Each piece represents a unique story, strategy, and successful outcome.
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            Each project tells a unique story, woven with creativity, passion, and purpose. Explore the narratives that have touched hearts and transformed brands.
           </p>
         </div>
 
@@ -88,8 +88,8 @@ const Portfolio = () => {
               onClick={() => setActiveCategory(category)}
               className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                 activeCategory === category
-                  ? "bg-gradient-to-r from-pink-500 to-purple-600 text-white shadow-lg"
-                  : "bg-white/10 text-white/70 hover:bg-white/20 hover:text-white"
+                  ? "bg-gradient-to-r from-rose-300 to-pink-400 text-white shadow-lg"
+                  : "bg-white/70 text-slate-600 hover:bg-white/90 hover:text-slate-800 border border-white/50"
               }`}
             >
               {category}
@@ -105,23 +105,23 @@ const Portfolio = () => {
               className="group relative animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-500 hover:scale-105">
+              <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-white/50 hover:border-rose-300 transition-all duration-500 hover:scale-105 shadow-lg">
                 <div className="flex justify-center mb-6">
                   <IPhoneMockup videoPlaceholder={project.videoPlaceholder} />
                 </div>
                 
                 <div className="text-center">
-                  <span className="inline-block bg-gradient-to-r from-pink-500 to-purple-600 text-white text-xs px-3 py-1 rounded-full mb-3">
+                  <span className="inline-block bg-gradient-to-r from-rose-300 to-pink-400 text-white text-xs px-3 py-1 rounded-full mb-3 font-medium">
                     {project.category}
                   </span>
                   
-                  <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                  <p className="text-white/60 text-sm mb-3">{project.client}</p>
-                  <p className="text-white/80 text-sm mb-4">{project.description}</p>
+                  <h3 className="text-xl font-bold text-slate-800 mb-2 font-serif">{project.title}</h3>
+                  <p className="text-slate-500 text-sm mb-3 italic">{project.client}</p>
+                  <p className="text-slate-600 text-sm mb-4 leading-relaxed">{project.description}</p>
                   
                   <div className="flex justify-between items-center text-sm">
-                    <span className="text-white/60">Views</span>
-                    <span className="text-cyan-400 font-bold">{project.views}</span>
+                    <span className="text-slate-500">Views</span>
+                    <span className="text-sky-500 font-bold">{project.views}</span>
                   </div>
                 </div>
               </div>
@@ -130,8 +130,8 @@ const Portfolio = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition-transform duration-300">
-            View All Projects
+          <button className="bg-gradient-to-r from-sky-300 to-teal-400 text-white px-8 py-4 rounded-full font-medium text-lg hover:scale-105 transition-transform duration-300 shadow-lg">
+            Discover More Stories
           </button>
         </div>
       </div>

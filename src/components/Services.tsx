@@ -6,38 +6,38 @@ const Services = () => {
     {
       icon: Video,
       title: "Content Creation",
-      description: "High-quality video content for social media, advertising, and brand storytelling.",
-      features: ["Video Production", "Social Media Content", "Brand Videos", "Tutorials & Demos"]
+      description: "Beautifully crafted visual stories that speak to hearts and inspire action.",
+      features: ["Video Storytelling", "Social Content", "Brand Films", "Creative Direction"]
     },
     {
       icon: TrendingUp,
-      title: "Marketing Strategy",
-      description: "Comprehensive marketing strategies that drive engagement and conversions.",
-      features: ["Campaign Strategy", "Market Analysis", "Growth Planning", "ROI Optimization"]
+      title: "Strategy & Growth",
+      description: "Thoughtful strategies that nurture authentic connections and sustainable growth.",
+      features: ["Creative Strategy", "Audience Research", "Growth Planning", "Performance Insights"]
     },
     {
       icon: Users,
-      title: "Influencer Partnerships",
-      description: "Strategic collaborations and partnership management for maximum impact.",
-      features: ["Partnership Strategy", "Influencer Outreach", "Campaign Management", "Performance Tracking"]
+      title: "Community Building",
+      description: "Fostering genuine communities where brands and audiences connect meaningfully.",
+      features: ["Community Strategy", "Engagement Planning", "Relationship Building", "Ambassador Programs"]
     },
     {
       icon: MessageSquare,
-      title: "Social Media Management",
-      description: "End-to-end social media management across all major platforms.",
-      features: ["Content Planning", "Community Management", "Engagement Strategy", "Analytics & Reporting"]
+      title: "Social Storytelling",
+      description: "Crafting compelling narratives across platforms that resonate and inspire.",
+      features: ["Platform Strategy", "Content Planning", "Narrative Development", "Audience Engagement"]
     },
     {
       icon: BarChart3,
-      title: "Analytics & Insights",
-      description: "Data-driven insights to optimize performance and maximize results.",
-      features: ["Performance Analysis", "Audience Insights", "Trend Forecasting", "Custom Reports"]
+      title: "Creative Analytics",
+      description: "Understanding what moves people through insightful analysis and optimization.",
+      features: ["Story Performance", "Audience Insights", "Creative Testing", "Impact Measurement"]
     },
     {
       icon: Palette,
-      title: "Brand Development",
-      description: "Creating cohesive brand identities that resonate with target audiences.",
-      features: ["Brand Strategy", "Visual Identity", "Voice & Tone", "Brand Guidelines"]
+      title: "Brand Artistry",
+      description: "Developing distinctive brand personalities that feel authentic and inspiring.",
+      features: ["Visual Identity", "Brand Voice", "Creative Guidelines", "Art Direction"]
     }
   ];
 
@@ -45,11 +45,11 @@ const Services = () => {
     <section id="services" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-white mb-6">
-            My <span className="bg-gradient-to-r from-green-500 to-cyan-500 bg-clip-text text-transparent">Services</span>
+          <h2 className="text-5xl font-bold text-slate-800 mb-6 font-serif">
+            Creative <span className="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent italic">Services</span>
           </h2>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto">
-            From content creation to comprehensive marketing strategies, I offer a full suite of services to elevate your brand.
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            From initial spark to final story, I offer a thoughtful suite of services designed to elevate your brand through authentic creativity.
           </p>
         </div>
 
@@ -57,20 +57,20 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-green-500/50 transition-all duration-500 hover:scale-105 animate-fade-in"
+              className="group bg-white/70 backdrop-blur-sm rounded-2xl p-8 border border-white/50 hover:border-emerald-300 transition-all duration-500 hover:scale-105 animate-fade-in shadow-lg"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="bg-gradient-to-r from-green-500 to-cyan-500 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="bg-gradient-to-r from-emerald-300 to-teal-400 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                 <service.icon className="text-white" size={32} />
               </div>
               
-              <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
-              <p className="text-white/70 mb-6 leading-relaxed">{service.description}</p>
+              <h3 className="text-2xl font-bold text-slate-800 mb-4 font-serif">{service.title}</h3>
+              <p className="text-slate-600 mb-6 leading-relaxed">{service.description}</p>
               
               <ul className="space-y-2">
                 {service.features.map((feature) => (
-                  <li key={feature} className="flex items-center text-white/60">
-                    <div className="w-2 h-2 bg-gradient-to-r from-green-500 to-cyan-500 rounded-full mr-3"></div>
+                  <li key={feature} className="flex items-center text-slate-500">
+                    <div className="w-2 h-2 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full mr-3"></div>
                     {feature}
                   </li>
                 ))}
@@ -80,13 +80,13 @@ const Services = () => {
         </div>
 
         <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-green-500/10 to-cyan-500/10 rounded-2xl p-8 border border-green-500/20">
-            <h3 className="text-3xl font-bold text-white mb-4">Ready to Get Started?</h3>
-            <p className="text-white/80 mb-6 max-w-2xl mx-auto">
-              Let's discuss how we can work together to create content that drives results and builds meaningful connections with your audience.
+          <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-white/50 shadow-lg">
+            <h3 className="text-3xl font-bold text-slate-800 mb-4 font-serif">Ready to Create Something Beautiful?</h3>
+            <p className="text-slate-600 mb-6 max-w-2xl mx-auto leading-relaxed">
+              Let's collaborate to bring your vision to life through authentic storytelling and meaningful creative work that truly resonates.
             </p>
-            <button className="bg-gradient-to-r from-green-500 to-cyan-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition-transform duration-300">
-              Start Your Project
+            <button className="bg-gradient-to-r from-emerald-300 to-teal-400 text-white px-8 py-4 rounded-full font-medium text-lg hover:scale-105 transition-transform duration-300 shadow-lg">
+              Begin Your Story
             </button>
           </div>
         </div>

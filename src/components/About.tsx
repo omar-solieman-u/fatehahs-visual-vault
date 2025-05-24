@@ -9,48 +9,48 @@ const About = () => {
           <div className="relative">
             <div className="w-80 h-80 mx-auto relative">
               {/* Profile Image Placeholder with Creative Border */}
-              <div className="w-full h-full bg-gradient-to-br from-pink-500 via-purple-500 to-cyan-500 rounded-3xl rotate-6"></div>
-              <div className="absolute inset-4 bg-slate-800 rounded-3xl -rotate-6 flex items-center justify-center">
-                <div className="text-white/50 text-center">
-                  <div className="text-6xl mb-4">👩‍💼</div>
-                  <div>Profile Photo</div>
+              <div className="w-full h-full bg-gradient-to-br from-rose-300 via-sky-300 to-amber-300 rounded-3xl rotate-6"></div>
+              <div className="absolute inset-4 bg-white rounded-3xl -rotate-6 flex items-center justify-center shadow-xl">
+                <div className="text-slate-400 text-center">
+                  <div className="text-6xl mb-4">👩‍🎨</div>
+                  <div className="font-serif italic">Creative Portrait</div>
                 </div>
               </div>
             </div>
             
             {/* Floating Elements */}
-            <div className="absolute -top-4 -right-4 bg-gradient-to-r from-yellow-400 to-orange-500 w-16 h-16 rounded-full flex items-center justify-center animate-pulse">
+            <div className="absolute -top-4 -right-4 bg-gradient-to-r from-amber-200 to-orange-300 w-16 h-16 rounded-full flex items-center justify-center animate-pulse">
               <Sparkles className="text-white" size={24} />
             </div>
-            <div className="absolute -bottom-4 -left-4 bg-gradient-to-r from-green-400 to-blue-500 w-12 h-12 rounded-full flex items-center justify-center animate-pulse delay-1000">
+            <div className="absolute -bottom-4 -left-4 bg-gradient-to-r from-emerald-200 to-teal-300 w-12 h-12 rounded-full flex items-center justify-center animate-pulse delay-1000">
               <Zap className="text-white" size={16} />
             </div>
           </div>
 
-          <div className="text-white">
-            <h2 className="text-5xl font-bold mb-6">
-              Meet <span className="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">Fatehah</span>
+          <div className="text-slate-700">
+            <h2 className="text-5xl font-bold mb-6 font-serif">
+              Meet <span className="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent italic">Fatehah</span>
             </h2>
             
-            <p className="text-xl text-white/80 mb-6 leading-relaxed">
-              I'm a passionate content creator and marketing executive who believes in the power of storytelling to build extraordinary brands. With expertise spanning from viral social media campaigns to comprehensive marketing strategies, I help businesses connect with their audiences in meaningful ways.
+            <p className="text-xl text-slate-600 mb-6 leading-relaxed font-light">
+              I'm a passionate storyteller who believes in the transformative power of authentic content. With a keen eye for beauty and a heart for meaningful connections, I help brands discover their unique voice and share their stories in ways that truly matter.
             </p>
 
-            <p className="text-lg text-white/70 mb-8">
-              My approach combines creative vision with data-driven insights, ensuring every piece of content not only looks amazing but delivers real results. From concept to execution, I craft experiences that resonate, engage, and convert.
+            <p className="text-lg text-slate-500 mb-8 leading-relaxed">
+              My approach blends artistic vision with strategic thinking, ensuring every piece of content not only captivates but also creates genuine emotional connections. From concept to creation, I craft experiences that inspire, engage, and leave lasting impressions.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                <Target className="text-pink-500 mb-4" size={32} />
-                <h3 className="text-xl font-semibold mb-2">Content Strategy</h3>
-                <p className="text-white/70">Developing comprehensive content strategies that align with brand goals and audience needs.</p>
+              <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-white/50 shadow-lg">
+                <Target className="text-rose-400 mb-4" size={32} />
+                <h3 className="text-xl font-semibold mb-2 font-serif">Authentic Storytelling</h3>
+                <p className="text-slate-600">Crafting narratives that resonate deeply with audiences and create meaningful brand connections.</p>
               </div>
               
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                <Sparkles className="text-purple-500 mb-4" size={32} />
-                <h3 className="text-xl font-semibold mb-2">Brand Development</h3>
-                <p className="text-white/70">Creating authentic brand voices and visual identities that stand out in crowded markets.</p>
+              <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-white/50 shadow-lg">
+                <Sparkles className="text-sky-400 mb-4" size={32} />
+                <h3 className="text-xl font-semibold mb-2 font-serif">Creative Direction</h3>
+                <p className="text-slate-600">Developing distinctive visual identities and content strategies that stand out beautifully.</p>
               </div>
             </div>
           </div>
